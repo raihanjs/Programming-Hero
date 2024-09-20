@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event bubble and Stop propagating</title>
+  </head>
+  <body>
+    <h1>Event bubble and Stop propagating</h1>
+
+    <section id="list-container">
+      <ul id="list-ul">
+        <li id="item-1">List Item 1</li>
+        <li id="item-2">List Item 2</li>
+        <li id="item-3">List Item 3</li>
+        <li id="item-4">List Item 4</li>
+        <li id="item-5">List Item 5</li>
+        <li id="item-6">List Item 6</li>
+      </ul>
+    </section>
+
+    <script>
+      const listContainer = document.getElementById("list-container");
+      const listUl = document.getElementById("list-ul");
+      const itemTwo = document.getElementById("item-2");
+
+      listContainer.addEventListener("click", function () {
+        console.log("ul container clicked");
+      });
+      listUl.addEventListener("click", function () {
+        console.log("ul clicked");
+      });
+      itemTwo.addEventListener("click", function () {
+        console.log("Item 2 clicked");
+        // event.stopPropagation();
+        event.stopImmediatePropagation();
+      });
+      itemTwo.addEventListener("click", function () {
+        console.log("Item 2 clicked 2");
+      });
+    </script>
+  </body>
+</html>

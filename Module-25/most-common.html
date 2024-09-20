@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25-4 Most common ways to set Event Handlers</title>
+  </head>
+  <body>
+    <h1>25-4 Most common ways to set Event Handlers</h1>
+    <h2 id="handler-status">Default Text</h2>
+    <button onclick="handleOnClick()">Handle event by add onclick event</button>
+
+    <br />
+    <br />
+
+    <button id="event-listener">Handle event by addEventListener</button>
+
+    <script>
+      function handleOnClick() {
+        // console.log("Button Clicked");
+        const handlerStatus = document.getElementById("handler-status");
+        handlerStatus.innerText =
+          "Handled by function attached on onClick attribute";
+      }
+
+      document
+        .getElementById("event-listener")
+        .addEventListener("click", function () {
+          const handlerStatus = document.getElementById("handler-status");
+          handlerStatus.innerText = "Updated by addEventlistener Button";
+        });
+    </script>
+  </body>
+</html>

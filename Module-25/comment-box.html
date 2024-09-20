@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25-5 Create a comment box and display comment</title>
+  </head>
+  <body>
+    <h1>25-5 Create a comment box and display comment</h1>
+
+    <div id="comment-container">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium eum
+        iusto cupiditate ea. Eaque obcaecati voluptatem eligendi quo rerum hic
+        commodi unde fugit iure error, repudiandae ipsum quam, facilis suscipit
+        cum est labore necessitatibus perspiciatis non sit! Earum facere vero
+        explicabo voluptas harum, voluptatum, accusantium esse repudiandae
+        cupiditate atque illum!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium eum
+        iusto cupiditate ea. Eaque obcaecati voluptatem eligendi quo rerum hic
+        commodi unde fugit iure error, repudiandae ipsum quam, facilis suscipit
+        cum est labore necessitatibus perspiciatis non sit! Earum facere vero
+        explicabo voluptas harum, voluptatum, accusantium esse repudiandae
+        cupiditate atque illum!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium eum
+        iusto cupiditate ea. Eaque obcaecati voluptatem eligendi quo rerum hic
+        commodi unde fugit iure error, repudiandae ipsum quam, facilis suscipit
+        cum est labore necessitatibus perspiciatis non sit! Earum facere vero
+        explicabo voluptas harum, voluptatum, accusantium esse repudiandae
+        cupiditate atque illum!
+      </p>
+    </div>
+
+    <div>
+      <textarea name="" id="add-comment-box" cols="60" rows="5"></textarea>
+      <br />
+      <button id="add-comment-btn">Post</button>
+    </div>
+
+    <script>
+      const commentContainer = document.getElementById("comment-container");
+      const commentBox = document.getElementById("add-comment-box");
+      const commentBtn = document.getElementById("add-comment-btn");
+
+      // add event on post btn
+      commentBtn.addEventListener("click", function () {
+        // get comment
+        const comment = commentBox.value;
+        //   create new p tage
+        newParagraph = document.createElement("p");
+        //   set comment to new p tag
+        newParagraph.innerText = comment;
+        //   add this p tag to the comment-container
+        commentContainer.append(newParagraph);
+        //   Clear comment box
+        commentBox.value = "";
+      });
+    </script>
+  </body>
+</html>

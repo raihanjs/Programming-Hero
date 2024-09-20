@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25-3 Different ways to use addEventListener on a button</title>
+  </head>
+  <body>
+    <h1>25-3 Different ways to use addEventListener on a button</h1>
+    <button
+      onclick="console.log(7);
+    "
+    >
+      Click Me
+    </button>
+
+    <button onclick="document.body.style.backgroundColor='yellow'">
+      Make me yellow
+    </button>
+
+    <button onclick="makeRed()">Make red</button>
+    <button id="blue">Make Blue</button>
+    <button id="pink">Make Pink</button>
+    <button id="green">Make Green</button>
+
+    <script>
+      function makeRed() {
+        document.body.style.backgroundColor = "red";
+      }
+
+      let blueBtn = document.getElementById("blue");
+      blueBtn.onclick = makeBlue;
+
+      function makeBlue() {
+        document.body.style.backgroundColor = "blue";
+      }
+
+      document.getElementById("pink").addEventListener("click", function () {
+        document.body.style.backgroundColor = "pink";
+      });
+
+      document.getElementById("green").addEventListener("click", makeGreen);
+
+      function makeGreen() {
+        document.body.style.backgroundColor = "green";
+      }
+    </script>
+  </body>
+</html>
